@@ -1,0 +1,143 @@
+version: '3.0'
+
+intents:
+  - greet
+  - goodbye
+  - Module
+  - Functionality
+
+forms:
+  element_form:
+    required_slots:
+      - elementname
+      - xpath
+      - maxsize
+      - minsize
+      - allowabledatatypes
+      - nonallowabledatatypes
+      - more
+slots:
+  elementname:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: element_form
+            requested_slot: elementname
+
+  xpath:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: element_form
+            requested_slot: xpath
+
+  maxsize:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: element_form
+            requested_slot: maxsize
+
+  minsize:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: element_form
+            requested_slot: minsize
+
+  allowabledatatypes:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: element_form
+            requested_slot: allowabledatatypes
+
+  nonallowabledatatypes:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: element_form
+            requested_slot: nonallowabledatatypes
+
+  more:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: element_form
+            requested_slot: more
+
+
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_Initiate:
+    - text: "From which module are we start test case writing?"
+
+  utter_Module:
+    - text: "Ok lets move ahead! Let me know the basic functionality of the screen"
+
+  utter_goodbye:
+    - text: "Bye"
+  utter_ask_elementname:
+    - text: Please enter all the locator names in the screen
+  utter_ask_xpath:
+    - text: Please enter all the xpaths for each above mentioned element
+  utter_ask_maxsize:
+    - text: Please enter maximum field length for above mentioned elements
+  utter_ask_minsize:
+    - text: Please enter minimum field length for above mentioned elements
+  utter_ask_allowabledatatypes:
+    - text: What are the allowable data types for mentioned elements?
+  utter_ask_nonallowabledatatypes:
+    - text: What is are the non allowable data types for mentioned elements?
+  utter_submit:
+    - text: Ok.Thanks!
+  utter_ask_more:
+   - text: Anything else do you need to input. If so Please input here.
+  utter_conclusion:
+    - text: Thank you for the input. Ill prepare the automation test case.Good Bye!
+  utter_slots_values:
+    - text: I am going to define the test case as follows:Field_names as:{elementname} and Field_Xpaths as:{xpath} and Fields_Max_Size as:{maxsize} and Fields_Min_size as:{minsize} and Fields_Allowable_datatypes as:{allowabledatatypes} and Fields-Non-Allowable_datatypes as:{nonallowabledatatypes}finaly Fields-otherconcerns as:{more}
+actions:
+  - utter_greet
+  - utter_Initiate
+  - utter_Module
+  - utter_goodbye
+  - utter_ask_elementname
+  - utter_ask_xpath
+  - utter_ask_more
+  - utter_ask_maxsize
+  - utter_ask_minsize
+  - utter_ask_allowabledatatypes
+  - utter_ask_nonallowabledatatypes
+  - utter_conclusion
+  - utter_slots_values
+  - utter_submit
+
+
+
+#forms: { }
+#e2e_actions: [ ]
+
+config:
+  store_entities_as_slots: true
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,130 @@
+version: "3.0"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+
+  - intent: Module
+    examples: |
+      - Sign In
+      - Login In
+      - Sign Out
+      - Card Processing
+      - Online Payment
+      - Add item to cart
+      - Sign Up
+      - I would like to start test cases with
+      - Would like to start
+      - test case writing
+      - start
+      - Module to start
+
+  #  - intent: elementname
+  #    examples: |
+  #      - element name is
+  #      - password
+  #      - Email
+  #      - Cart
+  #      - Username
+  #
+  #
+  #
+  #  - intent: xpath
+  #    examples: |
+  #      - Xpath is
+  #      - /bookstore/book[price>35.00
+  #      - text
+  #
+  #  - intent: maxsize
+  #    examples: |
+  #      - maxsize is 100
+  #      - 50 length
+  #      - 50 charachters
+  #
+  #  - intent: minsize
+  #    examples: |
+  #      - minsize is 1
+  #      - 5 length
+  #      - 5 charachters
+  #
+  #  - intent: allowabledatatypes
+  #    examples: |
+  #      - letters
+  #      - numbers
+  #      - spaces
+  #      -special charachters
+  #
+  #  - intent: nonallowabledatatypes
+  #    examples: |
+  #      - letters
+  #      - numbers
+  #      - spaces
+  #      -special charachters
+
+  - intent: Functionality
+    examples: |
+      - This page is basically to login to the application
+      - Once user add items user can proceed
+      - User can sign out by click on the log out button
+      - requires user identification and authentication
+      - Registration process
+      - multiple payment options
+      - cash payment
+      - card payment
+      - Push notifications
+      - discount code
+      - easy-to-use checkout
+      - Shopping cart
+      - Search bar
+      - Cart details
+
+#  - intent: affirm
+#    examples: |
+#      - yes
+#      - y
+#      - indeed
+#      - of course
+#      - that sounds good
+#      - correct
+#
+#  - intent: refuse
+#    examples: |
+#      - No
+#      - Nope
+#      - Never
+#      - Dont
+
+
+
+
+
+
+
+
+

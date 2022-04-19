@@ -1,0 +1,57 @@
+version: "3.0"
+
+stories:
+
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_Initiate
+      - intent: Module
+      - action: utter_Module
+      - intent: Functionality
+      - action: element_form
+      - active_loop: element_form
+      - slot_was_set:
+        - requested_slot: elementname
+      - slot_was_set:
+        - elementname: username,password
+      - slot_was_set:
+        - requested_slot: xpath
+      - slot_was_set:
+        - xpath: kkfff:/fdfdddd,dfdfdfddd
+      - slot_was_set:
+        - requested_slot: maxsize
+      - slot_was_set:
+        - maxsize: 10,100
+      - slot_was_set:
+        - requested_slot: minsize
+      - slot_was_set:
+        - minsize: 10,34
+      - slot_was_set:
+        - requested_slot: allowabledatatypes
+      - slot_was_set:
+        - allowabledatatypes: letters, numbers, special charachters
+      - slot_was_set:
+        - requested_slot: nonallowabledatatypes
+      - slot_was_set:
+         - nonallowabledatatypes: letters, numbers, special charachters
+      - slot_was_set:
+        - requested_slot: more
+      - slot_was_set:
+         - more: description
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: utter_submit
+      - action: utter_slots_values
+      - action: utter_conclusion
+
+  - story: sad path
+    steps:
+
+      - intent: goodbye
+      - action: utter_goodbye
+
+
+
