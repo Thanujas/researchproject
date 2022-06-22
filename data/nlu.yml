@@ -44,6 +44,37 @@ nlu:
       - test case writing
       - start
       - Module to start
+      - Enter card details
+      - Cancel Payment
+      - Remove Item from cart
+      - User Registration
+      - View Receipts
+      - Email
+      - Products
+      - Categories
+      - Discounts
+      - Edit Profile
+      - Log Out
+      - Track My Order
+      - Login with Facebook
+      - Login with Gmail
+      - Buy Now
+      - Select Language
+      - Return and Refunds
+      - Shipping
+      - Delivery
+      - Help Desk
+      - My Orders
+      - Browse the Store
+      - Notifications
+      - View Details
+      - Clear Details
+      - Refresh
+
+
+
+
+
 
   #  - intent: elementname
   #    examples: |

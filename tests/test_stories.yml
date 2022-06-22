@@ -1,91 +1,57 @@
-#### This file contains tests to evaluate that your bot behaves as expected.
-#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+version: "3.0"
 
 stories:
-- story: happy path 1
-  steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
 
-- story: happy path 2
-  steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_Initiate
+      - intent: Module
+      - action: utter_Module
+      - intent: Functionality
+      - action: element_form
+      - active_loop: element_form
+      - slot_was_set:
+        - requested_slot: elementname
+      - slot_was_set:
+        - elementname: username,password
+      - slot_was_set:
+        - requested_slot: xpath
+      - slot_was_set:
+        - xpath: kkfff:/fdfdddd,dfdfdfddd
+      - slot_was_set:
+        - requested_slot: maxsize
+      - slot_was_set:
+        - maxsize: 10,100
+      - slot_was_set:
+        - requested_slot: minsize
+      - slot_was_set:
+        - minsize: 10,34
+      - slot_was_set:
+        - requested_slot: allowabledatatypes
+      - slot_was_set:
+        - allowabledatatypes: letters, numbers, special charachters
+      - slot_was_set:
+        - requested_slot: nonallowabledatatypes
+      - slot_was_set:
+         - nonallowabledatatypes: letters, numbers, special charachters
+      - slot_was_set:
+        - requested_slot: more
+      - slot_was_set:
+         - more: description
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: utter_submit
+      - action: utter_slots_values
+      - action: utter_conclusion
 
-- story: sad path 1
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
+  - story: sad path
+    steps:
 
-- story: sad path 2
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
+      - intent: goodbye
+      - action: utter_goodbye
 
-- story: sad path 3
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
 
-- story: say goodbye
-  steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
 
-- story: bot challenge
-  steps:
-  - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
