@@ -20,21 +20,33 @@ class testpage(HomePage):
 
 
     def do_login(self):
-        n= len(self.locator.akax)
+        n= len(self.locator.xpathinalist)
         i=0
-        while i < n:
-            x = (self.locator.akax[i])
-            m=(By.XPATH,x)
-            self.do_send_keys(m,Test_Data.bankcode)
-            i += 1
-            time.sleep(2.4)
+        while i < n-1:
+         x = (self.locator.xpathinalist[i])
+         m=(By.XPATH,x)
+         self.do_send_keys(m,Test_Data.Testdatavalues[i])
+
+         i += 1
+         time.sleep(2.4)
+        else:
+         j=(By.XPATH,self.locator.xpathinalist[-1])
+        self.do_click(j)
 
 
 
     def do_maximumlength(self):
+        n = len(self.locator.xpathinalist)
+        i = 0
+        while i < n - 1:
+            x = (self.locator.xpathinalist[i])
+            m = (By.XPATH, x)
+            self.do_send_keys(m, Test_Data.randomcombination[i])
 
-       self.do_send_keys(self.locator.bankcode,Test_Data.randomstring)
-       self.do_send_keys(self.locator.username,Test_Data.randomnumbers)
-       self.do_send_keys(self.locator.password,Test_Data.randomcombination)
-       self.do_click(self.locator.sign)
+            i += 1
+            time.sleep(2.4)
+        else:
+            j = (By.XPATH, self.locator.xpathinalist[-1])
+        self.do_click(j)
+
 

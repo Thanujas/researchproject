@@ -96,7 +96,3 @@ _json_writing ()
 
 data = database.cursor.execute('''DELETE FROM events''')
 print("all data deleted")
-text2 = database.cursor.execute('''SELECT data FROM events where data like "%I am going to%" order by timestamp desc limit 1''')
-for row in text2:
-    print("after delete")
-    print(text2)
